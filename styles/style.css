@@ -36,3 +36,242 @@ ul,
 ol {
   list-style: none;
 }
+
+.content  {  /*общий контейнер*/
+  display: inline-flex;
+  justify-content: center;
+  align-items: end;
+  width: 1150px;
+  height: 534px;
+  gap: 30px;
+  margin: 133px 30px;
+}
+
+.result { /*блок видео + настройки*/
+  width: 711px;
+}
+
+.result__video-container { /* конетейнер с видео*/
+  position: relative;
+  height: 386px;
+  margin-bottom: 16px;
+}
+
+.result__video { /*само видео*/
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.search-form { /*форма с настройками показа*/
+  height: 54px;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.search-form__fieldset { /*форма вывода по признаку город*/
+  border: none;
+}
+
+.search-form__fieldset-title {  /*поле город*/
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.search-form__label { /*поле ввода города*/
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+  margin-right: 11px;
+}
+
+.visually-hidden { /*скрыть браузерные стили*/
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+ input::placeholder { /*плейсхолдер*/
+  color: #FFFFFFB2;
+}
+
+.search-form__textfield {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  background-color: transparent;
+  color: #fff;
+  appearance: none; /*сброс системных стилей */
+  width: 211px;
+  height: 22px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  border-left: none;
+  border-right: none;
+}
+
+.search-form__textfield:focus-visible { /* выделение элемента в фокусе*/
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.search-form__textfield:active { /*стили при нажатии на плейсхолдер*/
+  outline: 1px solid #fff;
+  border: none;
+}
+
+.search-form__pseudo-checkbox {
+  position: relative;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+}
+
+.search-form__checkbox:checked +.search-form__pseudo-checkbox::before {
+  content: "";
+  position: absolute;
+  width: 15px; 
+  height: 15px;
+  top: 1px;
+  left: 1px; 
+  bottom: 1px;
+  background-color: #fff; 
+}
+
+.button { /*кнопка найти*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 34px;
+  padding: 0;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+button:focus-visible { /*выделить когда кнопка в фокусе*/
+  outline: 1px solid #fff; 
+  outline-offset: 2px;
+}
+
+button:hover { /*состояние при наведении курсора*/
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+button:active {  /*когда нажала*/
+  outline: none;
+  background: #545050;
+}
+
+.search-form__submit-button {
+  width: 194px;
+}
+
+.content__details { /*секция с контентом*/
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  height: 100%;
+}
+
+.title { /*контейнер названия*/
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 70px;
+  width: 260px;
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.content__accent { 
+  color: #545050;
+}
+
+.content__list { /*список*/
+  position: relative;
+  width: 100%;
+  overflow: auto;
+}
+
+.content__card-link {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  margin: 2px;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.content__card-link:active {
+  outline: none;
+}
+
+.content__video-card {
+  display: flex;
+  height: 107px;
+}
+
+.content__video-card-description-container {
+  width: 195px;
+  height: 100%;
+}
+
+.content__video-card-title { /*название видео(город)*/
+  font-family: Oswald, sans-serif;
+  font-size: 27px;
+  font-weight: 700;
+  line-height: 30px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.content__video-card-description {  /*время суток*/
+  font-family: Fira Sans Condensed , sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 16.2px;
+}
+
+.content__video-card-thumbnail { /*минатюра видео*/
+  width: 178px;
+  height: 103px;
+  margin: auto;
+  background-size: contain;
+}
+
+.more-button {
+  background-color: transparent;
+  width: 100%;
+  height: 34px;
+}
