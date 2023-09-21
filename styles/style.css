@@ -9,13 +9,17 @@ html {
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
+  height:100%;  
+  display: flex;
+  text-align: left;
+  align-items: center;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 h1,
@@ -37,29 +41,28 @@ ol {
   list-style: none;
 }
 
-.content  {  /*общий контейнер*/
-  display: inline-flex;
+.content {
+  min-height: 534px;
   justify-content: center;
-  align-items: end;
-  width: 1150px;
-  height: 534px;
+  display: flex;
+  margin: auto;
   gap: 30px;
-  margin: 133px 30px;
 }
 
-.result { /*блок видео + настройки*/
-  width: 711px;
+.result {
+  align-self: end;
 }
 
-.result__video-container { /* конетейнер с видео*/
+.result__video-container {
   position: relative;
-  height: 386px;
-  margin-bottom: 16px;
+  inline-size: 711px; 
+  margin: 0px 0px 16px 0px;
 }
 
-.result__video { /*само видео*/
-  width: 100%;
-  height: 100%;
+.result__video {
+  inline-size: 100%;
+  block-size: 100%;
+  object-position: center;
   object-fit: cover;
 }
 
@@ -90,6 +93,11 @@ ol {
   margin-right: 11px;
 }
 
+label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
 .visually-hidden { /*скрыть браузерные стили*/
   position: absolute;
   inline-size: 1px;
@@ -114,12 +122,16 @@ ol {
   background-color: transparent;
   color: #fff;
   appearance: none; /*сброс системных стилей */
-  width: 211px;
-  height: 22px;
+  width: 225px;
+  height: 27px;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #fff;
   border-left: none;
   border-right: none;
+}
+
+.search-form__textfield:focus {
+  outline: none;
 }
 
 .search-form__textfield:focus-visible { /* выделение элемента в фокусе*/
@@ -165,6 +177,10 @@ ol {
   font-weight: 700;
 }
 
+.button:focus {
+  outline: none;
+}
+
 button:focus-visible { /*выделить когда кнопка в фокусе*/
   outline: 1px solid #fff; 
   outline-offset: 2px;
@@ -189,28 +205,38 @@ button:active {  /*когда нажала*/
   flex-direction: column;
   gap: 26px;
   height: 100%;
+  width: 399px;
 }
 
 .title { /*контейнер названия*/
   font-size: 75px;
   font-weight: 700;
-  line-height: 70px;
+  line-height: 94%;
   width: 260px;
   color: #fff;
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
   letter-spacing: 0em;
-  text-align: left;
+ 
 }
 
 .content__accent { 
   color: #545050;
 }
 
-.content__list { /*список*/
+.content__list {
   position: relative;
-  width: 100%;
-  overflow: auto;
+  overflow-y: auto;
+  block-size: 298px;
+  
+}
+
+.content__list-item:not(:last-child) {
+  margin: 0 0 30px;
+}
+
+li:not(:last-of-type) {
+  margin-bottom: 30px;
 }
 
 .content__card-link {
@@ -226,15 +252,23 @@ button:active {  /*когда нажала*/
 
 .content__card-link:focus {
   outline: none;
+  border: 1px solid #fff; /* Параметры рамки */
+  background: #1b1919; /* Цвет фона */
 }
 
 .content__card-link:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
+  background: #545050;
 }
 
 .content__card-link:active {
   outline: none;
+}
+
+.content__card-link_current {
+  display: block;
+  background: #545050;
 }
 
 .content__video-card {
@@ -247,6 +281,10 @@ button:active {  /*когда нажала*/
   height: 100%;
 }
 
+.input{
+  appearance: none;
+}
+
 .content__video-card-title { /*название видео(город)*/
   font-family: Oswald, sans-serif;
   font-size: 27px;
@@ -257,17 +295,17 @@ button:active {  /*когда нажала*/
 }
 
 .content__video-card-description {  /*время суток*/
-  font-family: Fira Sans Condensed , sans-serif;
+  font-family: 'Fira Sans Condensed' , sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 16.2px;
 }
 
-.content__video-card-thumbnail { /*минатюра видео*/
+.content__video-card-thumbnail { /*миниатюра видео*/
   width: 178px;
   height: 103px;
   margin: auto;
-  background-size: contain;
+  object-fit: contain;
 }
 
 .more-button {
